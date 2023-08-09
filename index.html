@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Cx330&#39;Lab</title>
+  <title>Cx330&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Cx330&#39;Lab">
+<meta property="og:title" content="Cx330&#39;s Blog">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Cx330&#39;Lab">
+<meta property="og:site_name" content="Cx330&#39;s Blog">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Cx330版权所有">
+<meta property="article:author" content="Cx330.版权所有">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Cx330'Lab" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Cx330's Blog" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -43,7 +43,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Cx330&#39;Lab</a>
+        <a href="/" id="logo">Cx330&#39;s Blog</a>
       </h1>
       
     </div>
@@ -161,11 +161,12 @@
 <p>到这里对于本地做笔记来说已经够用了，下面是把博客发布到公网：</p>
 <h2 id="本地Push至Github"><a href="#本地Push至Github" class="headerlink" title="本地Push至Github"></a>本地Push至Github</h2><ol>
 <li>新建一个仓库，用于存放输出的网页静态文件</li>
+<li><code>npm i hexo-deployer-git</code>安装插件，用于一键部署</li>
 <li>修改<code>_config</code>中的<code>deploy</code>：</li>
 </ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">https://github.com/lanan2/hexo-blog</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">    <span class="attr">message:</span> <span class="string">&quot;Build at <span class="template-variable">&#123;&#123; now(&#x27;YYYY-MM-DD HH:mm:ss Z&#x27;) &#125;&#125;</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ol start="3">
+<ol start="4">
 <li><code>hexo clean</code>删除<code>public</code>，<code>hexo g</code>重新生成，<code>hexo d</code>进行部署。一气呵成：<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
 </ol>
 <p>此时报错：<code>Author identity unknown*** Please tell me who you are.</code>  …想想也合理，总不能随便一个人就把别人仓库给改了</p>
@@ -177,13 +178,14 @@
 <li><code>-b</code>指定密钥长度，如4096</li>
 <li><code>-C</code>用于添加注释信息，标识密钥，方便管理</li>
 </ul>
-<p>本地验证：<code>ssh -T git@github.com</code>，返回<code>Hi lanan2! You&#39;ve successfully authenticated</code></p>
+<p>本地验证：<code>ssh -T git@github.com</code>，返回<code>Hi lanan2! You&#39;ve successfully authenticated</code>说明成功</p>
 <h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><ul>
 <li><code>git config --global user.name &quot;lanan2&quot;</code></li>
 <li><code>git config --global user.email &quot;makkapakka2344@gmail.com&quot;</code></li>
 </ul>
 <p>用户名和邮箱随意，只是用于标识身份，配置文件信息存放在<code>C:\Users\Admin\.gitconfig</code>中</p>
 <p>验证后无报错，成功推送</p>
+<h2 id="Vercel部署"><a href="#Vercel部署" class="headerlink" title="Vercel部署"></a>Vercel部署</h2><p>没啥记的，刚接触可能挺难，熟悉了之后就点几下鼠标的事</p>
 <hr>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>整个流程下来，已经对本应该学习的python失去了兴趣，赶紧趁热打铁去学习前端三件套（html css javascript），能用本地浏览器加载自己编写的html文件，简直太吸引人了。先定个小目标：编写一个简陋的html界面，用vercel部署（本地和云端都试一下）再通过域名访问（也许下一个目标是脱离vercel自己买服务器部署？暂时不想系统地学linux系统啊啊啊啊——</p>
 <p>正如开头所说，这个网站会专门记录我学习的课外知识，专业课再看吧，上难度的话我应该也会写写。未来想学的东西也非常多，包括但不限于：</p>
@@ -196,135 +198,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/07/nihao/" data-id="cll23vznb00014osbcwx27psr" data-title="Hello World!" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/08/07/nihao/" data-id="cll39cr3z00012gsb4jeica2d" data-title="Hello World!" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chinese/" rel="tag">Chinese</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-练手" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/07/%E7%BB%83%E6%89%8B/" class="article-date">
-  <time class="dt-published" datetime="2023-08-07T07:43:37.000Z" itemprop="datePublished">2023-08-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/07/%E7%BB%83%E6%89%8B/">练手</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一段引用</p>
-</blockquote>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>把大象放进冰箱：</p>
-<ol>
-<li><p>打开冰箱</p>
-</li>
-<li><p>把大象塞进去</p>
-</li>
-<li><p>关上冰箱</p>
-<p>继续</p>
-</li>
-</ol>
-<p>无序列表：</p>
-<ul>
-<li>垃圾死了放假啊</li>
-<li>萨拉就</li>
-</ul>
-<ul>
-<li>阿斯蒂芬就</li>
-<li>的撒发生</li>
-</ul>
-<p>要做的事</p>
-<ul>
-<li><input disabled="" type="checkbox"> 吃饭</li>
-<li><input checked="" disabled="" type="checkbox"> 睡觉</li>
-</ul>
-<p>代码块</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>表格</p>
-<table>
-<thead>
-<tr>
-<th align="center">姓名</th>
-<th align="right">年龄</th>
-<th align="center">成绩</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">张三</td>
-<td align="right">22</td>
-<td align="center">22</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="right"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="right"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="right"></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="right"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p>脚注</p>
-<p>一键三连<a href="%E7%82%B9%E8%B5%9E%E6%8A%95%E5%B8%81%E6%94%B6%E8%97%8F">^三连</a></p>
-<hr>
-<p>分割线</p>
-<hr>
-<p><a href="chatgpt.makkapakka.me" title="一个生产力工具">ChatGPT</a></p>
-<p><a href="chatgpt.makkapakka.me" title="一个生产力工具">ChatGPT</a>,<a href="chatgpt.makkapakka.me" title="一个生产力工具">ChatGPT</a>,<a href="chatgpt.makkapakka.me" title="一个生产力工具">ChatGPT</a>,</p>
-<p><a href="#%E6%A0%87%E9%A2%98">参考上方</a></p>
-<img src="D:\Pictures\Screenshots\屏幕截图 2023-08-06 202300.png" alt="nihao" style="zoom:50%;" />
-
-<p><em>xieti</em></p>
-<p><strong>加粗</strong></p>
-<p><u>saffron</u></p>
-<p><code>printf</code></p>
-<p>H<del>2</del>O</p>
-<p>x^2^</p>
-<iframe src="//player.bilibili.com/player.html?aid=327623069&bvid=BV1JA411h7Gw&cid=171385214&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/07/%E7%BB%83%E6%89%8B/" data-id="cll23vznc00024osb0obta1n3" data-title="练手" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
     </footer>
   </div>
   
@@ -372,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/07/hello-world/" data-id="cll23vzn700004osbeznxf0yv" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/08/07/hello-world/" data-id="cll39cr3v00002gsbb7u72ok4" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -433,10 +312,6 @@
           </li>
         
           <li>
-            <a href="/2023/08/07/%E7%BB%83%E6%89%8B/">练手</a>
-          </li>
-        
-          <li>
             <a href="/2023/08/07/hello-world/">Hello World</a>
           </li>
         
@@ -453,7 +328,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 Cx330版权所有<br>
+      &copy; 2023 Cx330.版权所有<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

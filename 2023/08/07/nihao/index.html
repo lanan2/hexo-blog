@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World! | Cx330&#39;Lab</title>
+  <title>Hello World! | Cx330&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="建站初衷大一下接手了大创负责人，需要学习python、机器学习等相关知识，但是学了一个暑假之后发现，之前学过的已经忘得差不多了。 尤其是这种课外的知识，学完就忘，学习期间也想过要记录下学习成果，尝试了包括但不限于以下方法：  每学习python的一个新功能，就新建一个文件夹，把相关功能代码塞进去，显然，太笨 用Xmind做思维导图，但这种导图工具只适合做大纲，不可能把功能代码也放进去 把代码塞进w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World!">
 <meta property="og:url" content="http://example.com/2023/08/07/nihao/index.html">
-<meta property="og:site_name" content="Cx330&#39;Lab">
+<meta property="og:site_name" content="Cx330&#39;s Blog">
 <meta property="og:description" content="建站初衷大一下接手了大创负责人，需要学习python、机器学习等相关知识，但是学了一个暑假之后发现，之前学过的已经忘得差不多了。 尤其是这种课外的知识，学完就忘，学习期间也想过要记录下学习成果，尝试了包括但不限于以下方法：  每学习python的一个新功能，就新建一个文件夹，把相关功能代码塞进去，显然，太笨 用Xmind做思维导图，但这种导图工具只适合做大纲，不可能把功能代码也放进去 把代码塞进w">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s1.imagehub.cc/images/2023/08/08/-2023-08-06-202300.png">
 <meta property="article:published_time" content="2023-08-07T07:43:37.000Z">
-<meta property="article:modified_time" content="2023-08-08T09:35:14.911Z">
-<meta property="article:author" content="Cx330版权所有">
+<meta property="article:modified_time" content="2023-08-09T04:53:30.189Z">
+<meta property="article:author" content="Cx330.版权所有">
 <meta property="article:tag" content="Chinese">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.imagehub.cc/images/2023/08/08/-2023-08-06-202300.png">
   
-    <link rel="alternate" href="/atom.xml" title="Cx330'Lab" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Cx330's Blog" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -50,7 +50,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Cx330&#39;Lab</a>
+        <a href="/" id="logo">Cx330&#39;s Blog</a>
       </h1>
       
     </div>
@@ -166,11 +166,12 @@
 <p>到这里对于本地做笔记来说已经够用了，下面是把博客发布到公网：</p>
 <h2 id="本地Push至Github"><a href="#本地Push至Github" class="headerlink" title="本地Push至Github"></a>本地Push至Github</h2><ol>
 <li>新建一个仓库，用于存放输出的网页静态文件</li>
+<li><code>npm i hexo-deployer-git</code>安装插件，用于一键部署</li>
 <li>修改<code>_config</code>中的<code>deploy</code>：</li>
 </ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">https://github.com/lanan2/hexo-blog</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">    <span class="attr">message:</span> <span class="string">&quot;Build at <span class="template-variable">&#123;&#123; now(&#x27;YYYY-MM-DD HH:mm:ss Z&#x27;) &#125;&#125;</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ol start="3">
+<ol start="4">
 <li><code>hexo clean</code>删除<code>public</code>，<code>hexo g</code>重新生成，<code>hexo d</code>进行部署。一气呵成：<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
 </ol>
 <p>此时报错：<code>Author identity unknown*** Please tell me who you are.</code>  …想想也合理，总不能随便一个人就把别人仓库给改了</p>
@@ -182,13 +183,14 @@
 <li><code>-b</code>指定密钥长度，如4096</li>
 <li><code>-C</code>用于添加注释信息，标识密钥，方便管理</li>
 </ul>
-<p>本地验证：<code>ssh -T git@github.com</code>，返回<code>Hi lanan2! You&#39;ve successfully authenticated</code></p>
+<p>本地验证：<code>ssh -T git@github.com</code>，返回<code>Hi lanan2! You&#39;ve successfully authenticated</code>说明成功</p>
 <h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><ul>
 <li><code>git config --global user.name &quot;lanan2&quot;</code></li>
 <li><code>git config --global user.email &quot;makkapakka2344@gmail.com&quot;</code></li>
 </ul>
 <p>用户名和邮箱随意，只是用于标识身份，配置文件信息存放在<code>C:\Users\Admin\.gitconfig</code>中</p>
 <p>验证后无报错，成功推送</p>
+<h2 id="Vercel部署"><a href="#Vercel部署" class="headerlink" title="Vercel部署"></a>Vercel部署</h2><p>没啥记的，刚接触可能挺难，熟悉了之后就点几下鼠标的事</p>
 <hr>
 <h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>整个流程下来，已经对本应该学习的python失去了兴趣，赶紧趁热打铁去学习前端三件套（html css javascript），能用本地浏览器加载自己编写的html文件，简直太吸引人了。先定个小目标：编写一个简陋的html界面，用vercel部署（本地和云端都试一下）再通过域名访问（也许下一个目标是脱离vercel自己买服务器部署？暂时不想系统地学linux系统啊啊啊啊——</p>
 <p>正如开头所说，这个网站会专门记录我学习的课外知识，专业课再看吧，上难度的话我应该也会写写。未来想学的东西也非常多，包括但不限于：</p>
@@ -201,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/07/nihao/" data-id="cll23vznb00014osbcwx27psr" data-title="Hello World!" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2023/08/07/nihao/" data-id="cll39cr3z00012gsb4jeica2d" data-title="Hello World!" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -214,9 +216,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2023/08/07/%E7%BB%83%E6%89%8B/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/08/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">练手</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
@@ -272,10 +274,6 @@
           </li>
         
           <li>
-            <a href="/2023/08/07/%E7%BB%83%E6%89%8B/">练手</a>
-          </li>
-        
-          <li>
             <a href="/2023/08/07/hello-world/">Hello World</a>
           </li>
         
@@ -292,7 +290,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2023 Cx330版权所有<br>
+      &copy; 2023 Cx330.版权所有<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
