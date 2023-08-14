@@ -29,8 +29,10 @@
 <meta property="og:image" content="https://s1.imagehub.cc/images/2023/08/08/-2023-08-06-202300.png">
 <meta property="og:image" content="https://s1.imagehub.cc/images/2023/08/09/imageb2a5bd86c26fdd21.png">
 <meta property="article:published_time" content="2023-08-07T07:43:37.000Z">
-<meta property="article:modified_time" content="2023-08-11T13:51:31.329Z">
+<meta property="article:modified_time" content="2023-08-14T03:44:48.786Z">
 <meta property="article:author" content="Cx330">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="搭建">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s1.imagehub.cc/images/2023/08/08/-2023-08-06-202300.png">
 
@@ -129,18 +131,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-      <div class="site-state-item site-state-categories">
-          <a href="/categories/">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -212,7 +209,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-08-11 21:51:31" itemprop="dateModified" datetime="2023-08-11T21:51:31+08:00">2023-08-11</time>
+      <time title="Modified: 2023-08-14 11:44:48" itemprop="dateModified" datetime="2023-08-14T11:44:48+08:00">2023-08-14</time>
     </span>
 
   
@@ -312,8 +309,12 @@
 <li><code>npm i hexo-deployer-git</code>安装插件，用于一键部署</li>
 <li>修改<code>_config</code>中的<code>deploy</code>：</li>
 </ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">https://github.com/lanan2/hexo-blog</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">    <span class="attr">message:</span> <span class="string">&quot;Build at <span class="template-variable">&#123;&#123; now(&#x27;YYYY-MM-DD HH:mm:ss Z&#x27;) &#125;&#125;</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:lanan2/Blog.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">    <span class="attr">message:</span> <span class="string">&quot;Build at <span class="template-variable">&#123;&#123; now(&#x27;YYYY-MM-DD HH:mm:ss Z&#x27;) &#125;&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>注意：<code>repo</code>具有两种填法：</p>
+<ul>
+<li>HTTP:<code>https://github.com/lanan2/Blog</code></li>
+<li>SSH:<code>git@github.com:lanan2/Blog.git</code></li>
+</ul>
 <ol start="4">
 <li><code>hexo clean</code>删除<code>public</code>，<code>hexo g</code>重新生成，<code>hexo d</code>进行部署。一气呵成：<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
 </ol>
@@ -326,13 +327,14 @@
 <li><code>-b</code>指定密钥长度，如4096</li>
 <li><code>-C</code>用于添加注释信息，标识密钥，方便管理</li>
 </ul>
-<p>本地验证：<code>ssh -T git@github.com</code>，返回<code>Hi lanan2! You&#39;ve successfully authenticated</code>说明成功</p>
+<p>本地验证：<code>ssh -T git@github.com</code>（小写t就不行），返回<code>Hi lanan2! You&#39;ve successfully authenticated</code>说明成功</p>
 <h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><ul>
 <li><code>git config --global user.name &quot;lanan2&quot;</code></li>
 <li><code>git config --global user.email &quot;makkapakka2344@gmail.com&quot;</code></li>
 </ul>
-<p>用户名和邮箱随意，只是用于标识身份，配置文件信息存放在<code>C:\Users\Admin\.gitconfig</code>中</p>
-<p>验证后无报错，成功推送</p>
+<p>用户名和邮箱随意，只是用于标识身份，配置文件信息存放在<code>C:\Users\Admin\.gitconfig</code>中<em>（系统配置信息存放在安装目录<code>Git\etc\gitconfig</code>中）</em></p>
+<p>验证后无报错，成功推送<strong>（要关梯子，否则报错：<code>Failed to connect to github.com port 443 after 21096 ms: Couldn&#39;t connect to server</code>）</strong></p>
+<p>关于主分支的名字：2022年10月1日，<code>master</code>正式更名为<code>main</code></p>
 <h2 id="Vercel部署"><a href="#Vercel部署" class="headerlink" title="Vercel部署"></a>Vercel部署</h2><p>部署github项目没啥记的，刚接触可能挺难，熟悉了之后就点几下鼠标的事（连部署SSL证书都省了</p>
 <h3 id="部署本地项目"><a href="#部署本地项目" class="headerlink" title="部署本地项目"></a>部署本地项目</h3><ul>
 <li><code>npm install -g vercel</code>全局安装vercel工具，<code>vercel -v</code>进行验证</li>
@@ -368,6 +370,10 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+              <a href="/tags/%E6%90%AD%E5%BB%BA/" rel="tag"><i class="fa fa-tag"></i> 搭建</a>
+          </div>
 
         
 
@@ -375,8 +381,8 @@
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/09/Git%E5%91%BD%E4%BB%A4/" rel="next" title="Git">
-                  Git <i class="fa fa-angle-right"></i>
+                <a href="/2023/08/10/Next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" rel="next" title="Next主题配置">
+                  Next主题配置 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
